@@ -99,12 +99,12 @@ PrestaSharp uses the RestSharp library to consume the Prestashop services.
 
 ```
 	DateTime StartDate = new DateTime (2016, 1, 1);
-	DateTime StartDate = new DateTime (2016, 1, 31);
+	DateTime EndDate = new DateTime (2016, 1, 31);
 	Dictionary<string, string> filter = new Dictionary<string, string>();
-    string dFrom = string.Format("{0:yyyy-MM-dd HH:mm:ss}", StartDate);
-    string dTo = string.Format("{0:yyyy-MM-dd HH:mm:ss}", EndDate);
-    filter.Add("date_add", "[" + dFrom + "," + dTo + "]");
-    List<long> PrestaSharpOrderIds = this.OrderFactory.GetIdsByFilter(filter, "id_DESC", null);
+	string dFrom = string.Format("{0:yyyy-MM-dd HH:mm:ss}", StartDate);
+	string dTo = string.Format("{0:yyyy-MM-dd HH:mm:ss}", EndDate);
+  	  filter.Add("date_add", "[" + dFrom + "," + dTo + "]");
+	List<long> PrestaSharpOrderIds = this.OrderFactory.GetIdsByFilter(filter, "id_DESC", null);
 ```
 
 ## Supported resources
